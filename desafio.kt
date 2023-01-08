@@ -11,14 +11,17 @@ data class Formacao(val nome: String, var conteudos: List<ConteudoEducacional>) 
     val inscritos = mutableListOf<Usuario>()
     
     fun matricular(usuario: Usuario) {
-        println(ConteudoEducacional(usuario.nome))
+        println("$usuario")
         //TODO("Utilize o parâmetro $usuario para simular uma matrícula (usar a lista de $inscritos).")
     }
 }
 
 fun main() {
     var usuario = Usuario("Marcos")
-    println(usuario.nome)
+    var conteudo: MutableList<ConteudoEducacional> = mutableListOf<ConteudoEducacional>()
+    conteudo.add(ConteudoEducacional("Linguas"))
+    var formacao = Formacao(usuario.nome, conteudo)
+    println("$formacao")
     //TODO("Analise as classes modeladas para este domínio de aplicação e pense em formas de evoluí-las.")
     //TODO("Simule alguns cenários de teste. Para isso, crie alguns objetos usando as classes em questão.")
 }
